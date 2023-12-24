@@ -6,7 +6,14 @@
 
 ./gnome_screensaver_lock_off.sh
 ./install_autoware.sh
-./install_chrome.sh
 ./install_docker.sh
+./install_nvidia_container_toolkit.sh
 ./install_ssh_server.sh
 ./install_vscode.sh
+./install_chrome.sh
+./install_pycharm_professional.sh
+
+./install_aws_cli.sh
+./install_gcloud_cli.sh
+./install_github_cli.sh
+
