@@ -18,6 +18,7 @@
 ./install_aws_cli.sh
 ./install_gcloud_cli.sh
 ./install_github_cli.sh
+./install_utilities.sh
 
 ./update_bashrc_with_current_path.sh
 
