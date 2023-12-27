@@ -6,6 +6,7 @@
 
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb 
 sudo apt install -y xvfb xserver-xorg-video-dummy xbase-clients python3-packaging python3-psutil # butempter0
+sudo apt install -y libutempter0
 sudo dpkg -i chrome-remote-desktop_current_amd64.deb
 sudo apt update
 rm chrome-remote-desktop_current_amd64.deb

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./update_bashrc_with_date_delimiter.sh
+
 ./sudo_nopasswd_add_current_user.sh
 
 ./user_dirs_normalization.sh
@@ -17,3 +19,4 @@
 ./install_gcloud_cli.sh
 ./install_github_cli.sh
 
+./update_bashrc_with_current_path.sh
