@@ -20,3 +20,6 @@
 ./install_github_cli.sh
 
 ./update_bashrc_with_current_path.sh
+
+echo -e "\e[31mIMPORTANT: Please log out and then log back in.\e[0m"
+
