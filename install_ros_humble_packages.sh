@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# This script is based on the method described in:
-# https://zenn.dev/tasada038/articles/0a69eb6c6b444f
-
 sudo apt update
 sudo apt install -y ros-humble-gazebo-*
 sudo apt install -y ros-humble-cartographer
@@ -17,9 +14,14 @@ sudo apt install -y ros-humble-turtlebot3-msgs
 sudo apt install -y ros-humble-turtlebot3-gazebo
 sudo apt install -y ros-humble-turtlebot3-fake-node
 sudo apt install -y ros-humble-realsense2-camera
+sudo apt install -y ros-humble-nav2-amcl
 
+# Check if TURTLEBOT3_MODEL environment variable is set in ~/.bashrc, and add if not present
+if ! grep -q "export TURTLEBOT3_MODEL=" ~/.bashrc; then
+    echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
+fi
 
-echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-echo "export LDS_MODEL=LDS-01" >> ~/.bashrc
-source ~/.bashrc
-
+# Check if LDS_MODEL environment variable is set in ~/.bashrc, and add if not present
+if ! grep -q "export LDS_MODEL=" ~/.bashrc; then
+    echo "export LDS_MODEL=LDS-01" >> ~/.bashrc
+fi
