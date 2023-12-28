@@ -13,7 +13,7 @@ echo "";
 echo "topics:";
 ros2 topic list -t;
 echo "";
-echo "/chatter topic info:";
+echo "ros2 topic info /chatter:";
 ros2 topic info /chatter'
 
 launch_command 'ros2 topic hz /chatter'

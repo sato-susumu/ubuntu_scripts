@@ -16,6 +16,9 @@ sudo apt install -y ros-humble-turtlebot3-fake-node
 sudo apt install -y ros-humble-realsense2-camera
 sudo apt install -y ros-humble-nav2-amcl
 
+# joystick
+sudo apt install -y ros-humble-joy*
+
 # Check if TURTLEBOT3_MODEL environment variable is set in ~/.bashrc, and add if not present
 if ! grep -q "export TURTLEBOT3_MODEL=" ~/.bashrc; then
     echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
