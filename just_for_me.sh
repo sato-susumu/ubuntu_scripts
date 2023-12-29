@@ -13,6 +13,8 @@
 ./install_ssh_server.sh
 ./install_vscode.sh
 ./install_chrome.sh
+./install_realsense_sdk.sh  
+
 ./install_pycharm_professional.sh
 
 ./install_aws_cli.sh
@@ -21,6 +23,7 @@
 ./install_utilities.sh
 
 ./update_bashrc_with_current_path.sh
+./update_bashrc_with_bell_off.sh
 
 echo -e "\e[31mIMPORTANT: Please log out and then log back in.\e[0m"
 
