@@ -9,7 +9,7 @@ lsusb
 
 echo ""
 echo "sudo v4l2-ctl --list-devices"
-sudo v4l2-ctl --list-devices
+v4l2-ctl --list-devices
 
 echo ""
 echo "cat /etc/group | grep video"
