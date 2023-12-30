@@ -14,6 +14,12 @@ sudo apt install -y ros-humble-v4l2-camera
 # simulation
 sudo apt install -y ros-humble-gazebo-ros-pkgs ros-humble-ros-ign
 
+# navigation
+sudo apt install -y ros-humble-navigation2 ros-humble-nav2-bringup
+sudo apt install -y ros-humble-cartographer ros-humble-cartographer-rviz
+
+sudo apt install -y ros-humble-dynamixel-sdk ros-humble-turtlebot3-msgs ros-humble-turtlebot3 ros-humble-turtlebot3-simulations
+
 # Check if TURTLEBOT3_MODEL environment variable is set in ~/.bashrc, and add if not present
 if ! grep -q "export TURTLEBOT3_MODEL=" ~/.bashrc; then
     echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
