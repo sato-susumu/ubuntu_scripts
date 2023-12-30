@@ -13,7 +13,6 @@
 ./install_ros_humble_packages.sh
 
 ./install_docker.sh
-./install_nvidia_container_toolkit.sh
 ./install_ssh_server.sh
 ./install_vscode.sh
 ./install_chrome.sh
