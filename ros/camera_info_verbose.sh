@@ -12,5 +12,5 @@ echo "lsusb"
 lsusb
 
 echo ""
-echo "v4l2-ctl --list-devices"
-v4l2-ctl --list-devices
+echo "v4l2-ctl --list-formats-ext"
+v4l2-ctl --list-formats-ext
