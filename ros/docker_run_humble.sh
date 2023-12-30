@@ -15,12 +15,12 @@ else
 fi
 
 # Run the Docker container
-docker run -it --rm --name guitest \
+docker run -it --rm --name humble \
     -e DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     --net=host \
     --privileged \
-    osrf/ros:humble-desktop \
+    osrf/ros:humble \
     $CMD
 
