@@ -8,6 +8,7 @@ sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt update
 sudo apt install cuda-drivers
 # nvidia-smi
+rm cuda-keyring*.deb
 
 read -p "Press any key to reboot"
 sudo reboot

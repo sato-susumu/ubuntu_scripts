@@ -47,3 +47,5 @@ source ~/.bashrc
 echo ""
 echo "nvcc -V"
 nvcc -V
+
+rm cuda-keyring*.deb
