@@ -1,13 +1,31 @@
 #!/bin/bash
 
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
-sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget https://developer.download.nvidia.com/compute/cuda/12.0.0/local_installers/cuda-repo-ubuntu2204-12-0-local_12.0.0-525.60.13-1_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu2204-12-0-local_12.0.0-525.60.13-1_amd64.deb
-sudo cp /var/cuda-repo-ubuntu2204-12-0-local/cuda-*-keyring.gpg /usr/share/keyrings/
-sudo apt-get update
-sudo apt-get -y install cuda
+# This script is based on the method described in:
+# https://zenn.dev/pon_pokapoka/articles/nvidia_cuda_install
 
-echo 'export PATH="/usr/local/cuda/bin:$PATH"' >>  ~/.bashrc
-echo 'export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"' >>  ~/.bashrc
-nvcc -V
+sudo apt update
+sudo apt install -y cuda-toolkit
+
+# Store the configurations in variables
+PATH_UPDATE="export PATH=\"/usr/local/cuda/bin\${PATH:+:\${PATH}}\""
+LD_LIBRARY_PATH_UPDATE="export LD_LIBRARY_PATH=\"/usr/local/cuda/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}\""
+
+# Path to the .bashrc file
+BASHRC="~/.bashrc"
+
+# Check and append PATH configuration
+if ! grep -Fxq "$PATH_UPDATE" ~/.bashrc; then
+    echo "$PATH_UPDATE" >> ~/.bashrc
+    echo "PATH configuration has been added to .bashrc."
+else
+    echo "PATH configuration already exists in .bashrc."
+fi
+
+# Check and append LD_LIBRARY_PATH configuration
+if ! grep -Fxq "$LD_LIBRARY_PATH_UPDATE" "$BASHRC"; then
+    echo "$LD_LIBRARY_PATH_UPDATE" >> "$BASHRC"
+    echo "LD_LIBRARY_PATH configuration has been added to .bashrc."
+else
+    echo "LD_LIBRARY_PATH configuration already exists in .bashrc."
+fi
+nvcc -v
