@@ -16,8 +16,12 @@ echo "CUDA:"
 dpkg -l | grep cuda
 
 echo ""
-echo "nvcc -v"
-nvcc -v
+echo "nvcc -V"
+nvcc -V
+
+echo ""
+echo "nvidia container toolkit"
+dpkg -l | grep nvidia-container
 
 echo ""
 echo "cuDNN:"

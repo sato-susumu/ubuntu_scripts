@@ -1,1 +1,1 @@
-sudo apt -y --purge remove nvidia-* cuda-* libnvidia*
+sudo apt -y --purge remove nvidia-*

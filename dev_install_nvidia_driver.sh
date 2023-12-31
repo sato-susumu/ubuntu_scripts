@@ -9,6 +9,5 @@ sudo apt update
 sudo apt install cuda-drivers
 # nvidia-smi
 
-echo "Press the key to reboot"
-pause
+read -p "Press any key to reboot"
 sudo reboot
