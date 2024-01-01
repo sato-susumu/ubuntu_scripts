@@ -8,7 +8,7 @@ launch_command() {
 # https://github.com/IntelRealSense/realsense-ros
 
 # launch_command 'ros2 run realsense2_camera realsense2_camera_node'
-launch_command "ros2 launch realsense2_camera rs_launch.py enable_rgbd:=true enable_sync:=true align_depth.enable:=true enable_color:=true enable_depth:=true" "realsense2_camera"
+launch_command "ros2 launch realsense2_camera rs_launch.py"
 
 launch_command "ros2 run rqt_image_view rqt_image_view" "rqt_image_view"
 launch_command "rqt_graph" "rqt_graph"
