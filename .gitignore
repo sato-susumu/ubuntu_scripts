@@ -1,3 +1,4 @@
 autoware/
 get-docker.sh
 cuda-keyring_1.0-1_all.deb*
+*.pt
