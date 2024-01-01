@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Check if xterm is installed and install it if not
-if ! command -v xterm &> /dev/null; then
-    echo "xterm is not installed. Installing xterm..."
-    sudo apt-get update && sudo apt-get install -y xterm
-fi
-
 # Function to execute a command in a new xterm window
 launch_command() {
     xterm -T "$2" -e bash -c "echo Running $2; $1; exec bash" &
