@@ -20,10 +20,12 @@ launch_command() {
 source ~/yolov8_ros/install/setup.bash
 
 launch_command "ros2 launch realsense2_camera rs_launch.py enable_rgbd:=true enable_sync:=true align_depth.enable:=false enable_color:=true enable_depth:=true" "RealSense Camera"
-launch_command "ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:=/camera/color/image_raw input_depth_topic:=/camera/depth/image_rect_raw input_depth_info_topic:=/camera/depth/camera_info" "YoloV8 3D"
+launch_command "ros2 launch yolov8_bringup yolov8.launch.py input_image_topic:=/camera/color/image_raw model:=yolov8m-pose.pt" "YoloV8"
 launch_command "ros2 run rqt_image_view rqt_image_view" "rqt_image_view"
 launch_command "rqt_graph" "rqt_graph"
-launch_command "echo 'nodes:'; ros2 node list; echo ''; echo 'topics:'; ros2 topic list -t; echo ''" "ros2 command"
+launch_command "echo 'nodes:'; ros2 node list; echo ''; echo 'topics:'; ros2 topic list -t; echo ''; sleep 3; nvidia-smi" "ros2 command"
+launch_command "ros2 topic hz /camera/color/image_raw" "topic hz image_raw"
+launch_command "ros2 topic hz /yolo/dbg_image" "topic hz dbg_image"
 
 # Wait for key input
 read -p "Press any key to exit all xterm windows..."
