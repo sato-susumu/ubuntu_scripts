@@ -18,7 +18,11 @@ sudo apt install -y ros-humble-gazebo-ros-pkgs ros-humble-ros-ign
 sudo apt install -y ros-humble-navigation2 ros-humble-nav2-bringup
 sudo apt install -y ros-humble-cartographer ros-humble-cartographer-rviz
 
+# tb3
 sudo apt install -y ros-humble-dynamixel-sdk ros-humble-turtlebot3*
+
+# tf
+sudo apt install -y ros-humble-rqt-tf-tree
 
 # Check if TURTLEBOT3_MODEL environment variable is set in ~/.bashrc, and add if not present
 if ! grep -q "export TURTLEBOT3_MODEL=" ~/.bashrc; then
