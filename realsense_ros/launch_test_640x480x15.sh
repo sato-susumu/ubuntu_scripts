@@ -19,12 +19,14 @@ ros2 topic list -t;
 echo "";
 )' "ros2 command"
 
+launch_command "rqt_graph" "rqt_graph"
+launch_command "ros2 run rqt_tf_tree rqt_tf_tree --force-discover" "rqt_tf_tree"
+launch_command "ros2 run rqt_image_view rqt_image_view" "rqt_image_view"
+
 launch_command "ros2 topic hz /camera/color/image_raw" "topic hz image_raw"
 launch_command "ros2 topic hz /camera/aligned_depth_to_color/image_raw" "topic hz aligned depth image_raw"
+# launch_command "ros2 topic hz /camera/color/image_raw/compressed" "topic hz image_raw/compressed"
 
-launch_command "rqt_graph" "rqt_graph"
-launch_command "ros2 run rqt_tf_tree rqt_tf_tree --force-discover"
-launch_command "ros2 run rqt_image_view rqt_image_view" "rqt_image_view"
 
 # Wait for key input
 read -p "Press any key to exit all xterm windows..."

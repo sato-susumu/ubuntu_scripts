@@ -7,7 +7,7 @@ launch_command() {
 # For details, please refer to the URL below.
 # https://github.com/IntelRealSense/realsense-ros
 
-launch_command "ros2 launch realsense2_camera rs_launch.py depth_qos:=SENSOR_DATA color_qos:=SENSOR_DATA enable_sync:=true align_depth.enable:=true enable_color:=true enable_depth:=true depth_module.profile:=640x480x30 rgb_camera.profile:=640x480x30" "realsense2_camera"
+launch_command "ros2 launch realsense2_camera rs_launch.py enable_sync:=true align_depth.enable:=true enable_color:=true enable_depth:=true depth_module.profile:=640x480x30 rgb_camera.profile:=640x480x30" "realsense2_camera"
 
 
 launch_command '(
@@ -23,7 +23,7 @@ launch_command "ros2 topic hz /camera/color/image_raw" "topic hz image_raw"
 launch_command "ros2 topic hz /camera/aligned_depth_to_color/image_raw" "topic hz aligned depth image_raw"
 
 launch_command "rqt_graph" "rqt_graph"
-launch_command "ros2 run rqt_tf_tree rqt_tf_tree --force-discover"
+launch_command "ros2 run rqt_tf_tree rqt_tf_tree --force-discover" "rqt_tf_tree"
 launch_command "ros2 run rqt_image_view rqt_image_view" "rqt_image_view"
 
 # Wait for key input
