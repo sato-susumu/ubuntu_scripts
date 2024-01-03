@@ -10,10 +10,10 @@ start_ros_node_if_device_exists() {
 }
 
 # Check for the existence of devices and start ROS nodes
-start_ros_node_if_device_exists "video0"
+# start_ros_node_if_device_exists "video0"
 # start_ros_node_if_device_exists "video2"
 # start_ros_node_if_device_exists "video4"
-# start_ros_node_if_device_exists "video6"
+start_ros_node_if_device_exists "video6"
 # start_ros_node_if_device_exists "video8"
 # start_ros_node_if_device_exists "device10"
 

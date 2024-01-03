@@ -12,5 +12,5 @@ echo "lsusb"
 lsusb
 
 echo ""
-echo "v4l2-ctl --list-formats-ext"
-v4l2-ctl --list-formats-ext
+echo "v4l2-ctl -d /dev/video0 --all --list-formats-ext"
+v4l2-ctl -d /dev/video0 --all --list-formats-ext
