@@ -9,7 +9,7 @@ launch_command "ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 odom bas
 launch_command "ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link camera_link" "camera_link"
 
 
-launch_command "ros2 launch realsense2_camera rs_launch.py enable_sync:=true align_depth.enable:=true enable_color:=true enable_depth:=true" "realsense2_camera"
+launch_command "ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true disparity_filter.enable:=true spatial_filter.enable:=true temporal_filter.enable:=true hole_filling_filter.enable:=truedecimation_filter.enable:=true" "realsense2_camera"
 
 launch_command "ros2 topic hz /scan" "topic hz scan"
 
