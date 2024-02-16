@@ -23,6 +23,8 @@
 ./install_github_cli.sh
 ./install_utilities.sh
 
+./install_drivers.sh
+
 
 echo -e "\e[31mIMPORTANT: Please log out and then log back in.\e[0m"
 
