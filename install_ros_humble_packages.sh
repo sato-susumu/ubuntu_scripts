@@ -24,6 +24,9 @@ sudo apt install -y ros-humble-dynamixel-sdk ros-humble-turtlebot3*
 # tf
 sudo apt install -y ros-humble-rqt-tf-tree
 
+# rclpy
+sudo apt install -y python3-sphinx python3-sphinx-autodoc-typehints python3-sphinx-rtd-theme
+
 # Check if TURTLEBOT3_MODEL environment variable is set in ~/.bashrc, and add if not present
 if ! grep -q "export TURTLEBOT3_MODEL=" ~/.bashrc; then
     echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
