@@ -4,6 +4,7 @@
 # Connects RDP to existing X display via VNC (x0vncserver)
 # Requires install_vnc.sh to be run first
 # ※LAN内での使用を想定
+# ※クリップボードが使えない
 
 set -e
 
