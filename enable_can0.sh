@@ -32,8 +32,8 @@ else
     sudo tee "$SERVICE_FILE" > /dev/null << 'EOF'
 [Unit]
 Description=Set up CAN interface can0 (250k)
-# can0 が無いマシンでは自動でスキップ
-ConditionPathExists=/sys/class/net/can0
+After=sys-subsystem-net-devices-can0.device
+BindsTo=sys-subsystem-net-devices-can0.device
 
 [Service]
 Type=oneshot
@@ -42,7 +42,7 @@ ExecStart=/usr/sbin/ip link set can0 up type can bitrate 250000
 ExecStop=/usr/sbin/ip link set can0 down
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=sys-subsystem-net-devices-can0.device
 EOF
     echo "作成完了: $SERVICE_FILE"
     cat "$SERVICE_FILE"
